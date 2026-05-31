@@ -1,0 +1,396 @@
+:root {
+  font-family: "IRANYekanXFaNum";
+  src: url("/assets/fonts/IRANYekanXFaNum-Bold.woff") format("woff");
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 10px;
+  min-width: 320px;
+  min-height: 100vh;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/* src/assets/css/ImageGrid.css */
+
+/* بخش اصلی */
+.image-grid-section {
+  padding: 30px 20px;
+  background-color: #f8f9fa;
+  direction: rtl;
+  width: 100%;
+}
+
+.image-grid-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* عنوان سکشن */
+.image-grid-title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.image-grid-title-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.image-grid-title-icon {
+  font-size: 30px;
+  color: #8ed557;
+}
+
+.image-grid-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.image-grid-title-badge {
+  background-color: #8ed557;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 30px;
+}
+
+/* دکمه‌های اسکرول */
+.image-grid-scroll-buttons {
+  display: none;
+  gap: 10px;
+}
+
+.image-grid-scroll-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #8ed557;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(142, 213, 87, 0.3);
+}
+
+.image-grid-scroll-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+/* کانتینر اسکرول */
+.image-grid-scroll-container {
+  overflow-x: visible;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+  direction: ltr;
+  width: 100%;
+}
+
+/* گرید */
+.image-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  direction: rtl;
+  width: fit-content;
+  min-width: 100%;
+  padding: 5px 0;
+}
+
+/* کارت */
+.image-grid-card {
+  position: relative;
+  width: calc(25% - 22.5px);
+  min-width: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  flex-shrink: 0;
+  height: auto;
+}
+
+.image-grid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(142, 213, 87, 0.3);
+}
+
+/* عکس */
+.image-grid-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-grid-card:hover .image-grid-image {
+  transform: scale(1.1);
+}
+
+/* نوشته اول - بالا سمت راست */
+.image-grid-top-text {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 15;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* کادر پایین */
+.image-grid-bottom-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(142, 213, 87, 0.8));
+  color: #fff;
+  padding: 25px 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 20;
+  backdrop-filter: blur(5px);
+}
+
+.image-grid-card:hover .image-grid-bottom-box {
+  transform: translateY(0);
+}
+
+.image-grid-bottom-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.image-grid-bottom-subtitle {
+  display: block;
+  font-size: 14px;
+  opacity: 0.95;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.image-grid-bottom-hover-text {
+  display: block;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* نشانگر صفحه برای موبایل */
+.image-grid-mobile-indicator {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.image-grid-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.image-grid-indicator-dot.active {
+  background-color: #8ed557;
+  width: 24px;
+  border-radius: 12px;
+}
+
+/* استایل اسکرول بار */
+.image-grid-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.image-grid-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.image-grid-scroll-container::-webkit-scrollbar-thumb {
+  background: #8ed557;
+  border-radius: 10px;
+}
+
+.image-grid-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #7bc04a;
+}
+
+/* ===== رسپانسیو ===== */
+
+/* موبایل */
+@media (max-width: 768px) {
+  .image-grid-section {
+    padding: 30px 15px;
+  }
+  
+  .image-grid-title {
+    font-size: 20px;
+  }
+  
+  .image-grid-title-icon {
+    font-size: 24px;
+  }
+  
+  .image-grid-title-badge {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+  
+  .image-grid-scroll-buttons {
+    display: flex;
+  }
+  
+  .image-grid-scroll-container {
+    overflow-x: auto;
+  }
+  
+  .image-grid-card {
+    width: 320px;
+    min-width: 320px;
+  }
+  
+  .image-grid-top-text {
+    font-size: 12px;
+  }
+  
+  .image-grid-mobile-indicator {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-grid-section {
+    padding: 30px 15px;
+  }
+  
+  .image-grid-title-section {
+    margin-bottom: 20px;
+  }
+  
+  .image-grid-bottom-box {
+    padding: 20px 15px;
+  }
+  
+  .image-grid-bottom-title {
+    font-size: 16px;
+  }
+  
+  .image-grid-bottom-subtitle,
+  .image-grid-bottom-hover-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 920px) and (min-width: 769px) {
+  .image-grid-card {
+    width: 320px;
+    min-width: 320px;
+  }
+  
+  .image-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 921px) {
+  .image-grid-card {
+    width: calc(33.333% - 20px);
+  }
+}
